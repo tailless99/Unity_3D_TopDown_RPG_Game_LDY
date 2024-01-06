@@ -15,11 +15,6 @@ public class Fader : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
-    private void Start()
-    {
-        FadeIn(3);
-    }
-
     public void FadeOutImmediate()
     {
         canvasGroup.alpha = 1;

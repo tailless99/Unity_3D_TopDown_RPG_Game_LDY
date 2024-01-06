@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Mover : MonoBehaviour , IAction
+public class Mover : MonoBehaviour , IAction, ISaveable
 {
 	[SerializeField] private Transform target;
 	[SerializeField] private float maxMoveSpeed = 6f;
@@ -77,4 +77,18 @@ public class Mover : MonoBehaviour , IAction
 	{
 		navMeshAgent.isStopped = true;
 	}
+
+    public object CaptureState()
+    {
+		return new SerializableVector3(transform.position);
+    }
+
+    public void RestoreState(object state)
+    {
+		SerializableVector3 position = (SerializableVector3)state;
+		navMeshAgent.enabled = false;
+		transform.position = position.ToVector();
+		navMeshAgent.enabled = true;
+		GetComponent<ActionScheduler>().CancleCurrentAction();
+    }
 }
