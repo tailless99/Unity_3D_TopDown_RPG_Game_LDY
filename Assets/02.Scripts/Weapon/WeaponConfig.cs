@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "weapon", menuName = "weapons/make new Weapon", order = 1)]
-public class WeaponConfig : ScriptableObject
+public class WeaponConfig : InventoryItem
 {
     [SerializeField] AnimatorOverrideController animatorOverride = null;
     [SerializeField] Weapon equippedPrefab = null;

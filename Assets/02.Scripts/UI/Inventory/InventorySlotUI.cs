@@ -1,0 +1,25 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class InventorySlotUI : MonoBehaviour
+{
+    [SerializeField] InventoryItemIcon icon;
+
+    // STATE
+    int index;
+    InventoryItem item;
+    Inventory Inventory;
+
+    /// <summary>
+    /// 인벤토리에서 해당 슬롯에 있는 아이템과 슬롯 인덱스를 받아오는 코드
+    /// </summary>
+    /// <param name="inventory"></param>
+    /// <param name="index"></param>
+    public void Setup(Inventory inventory, int index)
+    {
+        this.Inventory = inventory;
+        this.index = index;
+        icon.SetItem(inventory.GetItemInSlot(index), inventory.GetNumberInSlot(index));
+    }
+}

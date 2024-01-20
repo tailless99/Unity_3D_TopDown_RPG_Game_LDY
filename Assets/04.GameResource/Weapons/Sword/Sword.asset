@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08c8b1af4b2dcf4b91c00767af4261a, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  itemID: 9d42af9d-cbce-40df-974c-e7abe385f917
+  displayName: Duke's Sword
+  discription: Duke's Sword. well....
+  icon: {fileID: 21300000, guid: 4dc051a0301cecb4aa1a85036ace2a58, type: 3}
+  stackable: 0
   animatorOverride: {fileID: 22100000, guid: 3c1c2a743f805a144a0af5b727e40223, type: 2}
   equippedPrefab: {fileID: 3166564418493898095, guid: cb6dc57b4fa31af4a95b760177f3b94f, type: 3}
   weaponDamage: 5

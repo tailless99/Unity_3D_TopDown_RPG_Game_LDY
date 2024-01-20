@@ -15,6 +15,7 @@ public class Health : MonoBehaviour, ISaveable
 
 	}
 
+	BaseStats baseStats;
 	ActionScheduler actionScheduler;
 	LazyValue<float> healthPoints;
 	bool isDead = false;
@@ -23,6 +24,7 @@ public class Health : MonoBehaviour, ISaveable
 	{
 		healthPoints = new LazyValue<float>(GetInitialHealth);
 		actionScheduler = GetComponent<ActionScheduler>();
+		baseStats = GetComponent<BaseStats>();
 	}
 
 	private float GetInitialHealth()
@@ -51,7 +53,17 @@ public class Health : MonoBehaviour, ISaveable
 		}
 	}
 
-	public bool IsDead() => isDead;
+    public float getHealthPoints()
+    {
+        return healthPoints.value;
+    }
+
+    public float GetMaxHealthPoints()
+    {
+		return baseStats.GetStat(Stats.Health);
+    }
+
+    public bool IsDead() => isDead;
 
     private void Die()
     {
@@ -81,4 +93,6 @@ public class Health : MonoBehaviour, ISaveable
 		healthPoints.value = (float)state;
 		Debug.Log("RestoreState health : " + healthPoints.value);
     }
+
+    
 }
