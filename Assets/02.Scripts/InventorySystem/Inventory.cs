@@ -61,6 +61,28 @@ public class Inventory : MonoBehaviour
     }
 
     /// <summary>
+    /// 이미 있는 슬롯에 아이템을 추가합니다
+    /// 이 아이템의 유형이 이미 있는 경우, 스택에 추가합니다.
+    /// </summary>
+    /// <param name="index"></param>
+    /// <param name="item"></param>
+    /// <param name="number"></param>
+    /// <exception cref="NotImplementedException"></exception>
+    public bool addItemToSlot(int index, InventoryItem item, int number)
+    {
+        if (slots[index].item != null) return AddToFirstEmptySlot(item, number);
+
+        // 해당 슬롯에 아이템을 추가하는 코드
+        slots[index].item = item;
+        slots[index].number += number;
+        
+        // 인벤토리 갱신
+        inventoryUpdated?.Invoke();
+
+        return true;
+    }
+
+    /// <summary>
     /// 주어진 아이템을 수용할 수 있는 슬롯을 찾습니다.
     /// </summary>
     /// <param name="item"></param>
@@ -119,4 +141,5 @@ public class Inventory : MonoBehaviour
     {
         return slots[index].number;
     }
+
 }

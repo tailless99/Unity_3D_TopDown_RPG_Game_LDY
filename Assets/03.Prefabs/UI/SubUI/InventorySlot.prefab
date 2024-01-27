@@ -313,6 +313,8 @@ GameObject:
   - component: {fileID: 8325891168077329908}
   - component: {fileID: 7480119357664330741}
   - component: {fileID: 7662545333811586565}
+  - component: {fileID: 7335458453112681587}
+  - component: {fileID: 8035144975502852077}
   m_Layer: 5
   m_Name: InventoryItem
   m_TagString: Untagged
@@ -391,3 +393,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textContainer: {fileID: 6920164072892297580}
   itemNumber: {fileID: 6154094967825499264}
+--- !u!114 &7335458453112681587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509926927513415619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b43d26d11d4bc040ba69ebe515ac51a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!225 &8035144975502852077
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8509926927513415619}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
